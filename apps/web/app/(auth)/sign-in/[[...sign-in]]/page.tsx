@@ -1,11 +1,9 @@
+import { SignInView } from "@/modules/auth/ui/views/sign-in-view";
 import { SignIn } from "@clerk/nextjs";
 
 const page = () => {
     return ( 
-        <>
-            <div> sign in from nested route</div>
-            <SignIn/>
-        </>
+        <SignInView/>
      );
 }
  

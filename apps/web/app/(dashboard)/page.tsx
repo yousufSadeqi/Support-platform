@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from "@workspace/ui/components/button";
-import {SignInButton, SignOutButton, SignUpButton, UserButton} from "@clerk/nextjs";
+import {OrganizationSwitcher, SignInButton, SignOutButton, SignUpButton, UserButton} from "@clerk/nextjs";
 import {Input} from "@workspace/ui/components/input"; 
 import {useQuery, useMutation, Authenticated, Unauthenticated} from "convex/react"; 
 import {api} from "@workspace/backend/_generated/api";
@@ -14,7 +14,6 @@ export default function Page() {
 
   return (
     <>
-      <Authenticated>
         <div className="flex items-center justify-center min-h-svh">
           <div className="flex flex-col items-center justify-center gap-4">
             <h1 className="text-2xl font-bold">Hello World</h1>
@@ -29,20 +28,11 @@ export default function Page() {
             <UserButton>
               Profile
             </UserButton>
-            
+            <OrganizationSwitcher hidePersonal/>
           </div>
         </div>
-      </Authenticated>
-      <Unauthenticated>
-        <div className="flex items-center justify-center min-h-svh">
-          <div className="flex flex-col items-center justify-center gap-4">
-            <h1 className="text-2xl font-bold">Please sign in to view this page.</h1>
-            <SignInButton>
-              Sign in
-            </SignInButton>
-          </div>
-        </div>
-      </Unauthenticated>
     </>
   )
 }
+
+// stop at 2:20 
